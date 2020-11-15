@@ -116,7 +116,7 @@ def select_dummy_factors(dummy_dict, keep_top, replace_with):
     
     return dummy_list
 
-#将字符型数字转化为浮点型
+#将字符型数字转化为浮点型，因为原数据框的数字都是浮点型，但split之后的数据是字符型！
 def safe_float(item):
     try:
         n=float(item)
