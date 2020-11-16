@@ -4,32 +4,35 @@ dummy_count: {'Year': {2006.0: 516, 2005.0: 500, 2007.0: 496, 2004.0: 492, 2003.
 dummy_list: [['Year_2006.0', 'Year_2005.0', 'Year_2007.0', 'Year_2004.0', 'Year_2003.0', 'Year_2001.0', 'Year_2000.0', 'Year_1999.0', 'Year_1995.0', 'Year_1997.0', 'Year_1998.0', 'Year_1996.0', 'Year_2002.0'], ['Month_10.0', 'Month_8.0', 'Month_4.0', 'Month_1.0', 'Month_6.0', 'Month_7.0', 'Month_3.0', 'Month_5.0', 'Month_12.0', 'Month_2.0', 'Month_9.0', 'Month_11.0'], ['DayOfWeek_2.0', 'DayOfWeek_1.0', 'DayOfWeek_5.0', 'DayOfWeek_7.0', 'DayOfWeek_3.0', 'DayOfWeek_4.0', 'DayOfWeek_6.0'], ['UniqueCarrier_others', 'UniqueCarrier_WN', 'UniqueCarrier_DL', 'UniqueCarrier_AA', 'UniqueCarrier_UA', 'UniqueCarrier_US', 'UniqueCarrier_NW', 'UniqueCarrier_CO', 'UniqueCarrier_MQ'], ['Origin_others', 'Origin_ATL', 'Origin_ORD', 'Origin_DFW', 'Origin_LAX', 'Origin_PHX', 'Origin_IAH', 'Origin_MSP', 'Origin_DTW', 'Origin_LAS', 'Origin_DEN', 'Origin_SFO', 'Origin_EWR', 'Origin_STL', 'Origin_CLT', 'Origin_BOS', 'Origin_SLC', 'Origin_MCO', 'Origin_PHL', 'Origin_LGA', 'Origin_CVG', 'Origin_DCA', 'Origin_CLE', 'Origin_SEA', 'Origin_SAN', 'Origin_MDW', 'Origin_BWI', 'Origin_PIT', 'Origin_PDX', 'Origin_IAD', 'Origin_JFK', 'Origin_MCI', 'Origin_TPA', 'Origin_OAK', 'Origin_MEM', 'Origin_RDU', 'Origin_HOU', 'Origin_SJC', 'Origin_BNA', 'Origin_MSY', 'Origin_FLL', 'Origin_MIA', 'Origin_SNA', 'Origin_ONT', 'Origin_DAL', 'Origin_CMH', 'Origin_SAT', 'Origin_SMF'], ['Dest_others', 'Dest_ORD', 'Dest_ATL', 'Dest_DFW', 'Dest_LAX', 'Dest_IAH', 'Dest_PHX', 'Dest_DEN', 'Dest_DTW', 'Dest_MSP', 'Dest_CLT', 'Dest_EWR', 'Dest_LAS', 'Dest_STL', 'Dest_SFO', 'Dest_SLC', 'Dest_BOS', 'Dest_PHL', 'Dest_MCO', 'Dest_CVG', 'Dest_LGA', 'Dest_SEA', 'Dest_DCA', 'Dest_PIT', 'Dest_SAN', 'Dest_BWI', 'Dest_IAD', 'Dest_OAK', 'Dest_CLE', 'Dest_MIA', 'Dest_JFK', 'Dest_BNA', 'Dest_MDW', 'Dest_PDX', 'Dest_SJC', 'Dest_MEM', 'Dest_TPA', 'Dest_MCI', 'Dest_MSY', 'Dest_FLL', 'Dest_DAL', 'Dest_SMF', 'Dest_ABQ', 'Dest_HOU', 'Dest_IND', 'Dest_BDL', 'Dest_SNA', 'Dest_CMH']]
 
 
-myair:
+时间：19：22-19：28 6分钟左右
+myair:          
+         Year  Month  DayofMonth  DayOfWeek  ...  Dest  ArrDelay  AirTime Distance
+0        2006.0    7.0         6.0        4.0  ...   LCH       2.0     25.0    127.0
+1        1997.0    3.0         2.0        7.0  ...   COS      29.0    248.0   1623.0
+2        1997.0    2.0        14.0        5.0  ...   LAX      -2.0     70.0    451.0
+3        2000.0    6.0        11.0        7.0  ...   PHX      11.0    133.0   1009.0
+4        1997.0   11.0        16.0        7.0  ...   BOS      13.0    177.0   1562.0
+...         ...    ...         ...        ...  ...   ...       ...      ...      ...
+3682942  1995.0    6.0         9.0        5.0  ...   DFW      -6.0    203.0   1471.0
+3682943  1997.0    8.0        13.0        3.0  ...   JAX      13.0     59.0    318.0
+3682944  2000.0    4.0        24.0        1.0  ...   DAL      22.0     34.0    181.0
+3682945  2005.0    4.0        11.0        1.0  ...   STL      11.0     71.0    551.0
+3682946  2002.0    2.0        12.0        2.0  ...   ORD     -14.0    107.0    888.0
 
-        Year  Month  DayofMonth  DayOfWeek  ...  Dest  ArrDelay  AirTime Distance
-0     2006.0    7.0         6.0        4.0  ...   LCH       2.0     25.0    127.0
-1     1997.0    3.0         2.0        7.0  ...   COS      29.0    248.0   1623.0
-2     1997.0    2.0        14.0        5.0  ...   LAX      -2.0     70.0    451.0
-3     2000.0    6.0        11.0        7.0  ...   PHX      11.0    133.0   1009.0
-4     1997.0   11.0        16.0        7.0  ...   BOS      13.0    177.0   1562.0
-...      ...    ...         ...        ...  ...   ...       ...      ...      ...
-5331  2002.0    1.0        24.0        4.0  ...   LGA     -12.0     75.0    585.0
-5332  1996.0   12.0        31.0        2.0  ...   LAS       0.0     33.0    197.0
-5333  2003.0    4.0         8.0        2.0  ...   IAH      19.0    166.0    984.0
-5334  2000.0    7.0         4.0        2.0  ...   DEN      15.0     70.0    495.0
-5335  2001.0    5.0        11.0        5.0  ...   MCI     -17.0     94.0    692.0
+[3682947 rows x 14 columns]
 
+new_air： 
+         CRSArrTime  DayofMonth  ...  Dest_ABQ  Dest_others
+0            2148.0         6.0  ...         0            1
+1            2245.0         2.0  ...         0            1
+2             730.0        14.0  ...         0            0
+3            2121.0        11.0  ...         0            0
+4            1859.0        16.0  ...         0            0
+...             ...         ...  ...       ...          ...
+3682942      1017.0         9.0  ...         0            0
+3682943      1530.0        13.0  ...         0            1
+3682944      1240.0        24.0  ...         0            0
+3682945      1026.0        11.0  ...         0            0
+3682946      1102.0        12.0  ...         0            0
 
-new_air:      
-          CRSArrTime  DayofMonth  ...  Dest_CMH  Dest_others
-0         2148.0         6.0  ...         0            1
-1         2245.0         2.0  ...         0            1
-2          730.0        14.0  ...         0            0
-3         2121.0        11.0  ...         0            0
-4         1859.0        16.0  ...         0            0
-...          ...         ...  ...       ...          ...
-5331      2109.0        24.0  ...         0            0
-5332        43.0        31.0  ...         0            0
-5333      1349.0         8.0  ...         0            0
-5334      1556.0         4.0  ...         0            0
-5335      1232.0        11.0  ...         0            0
+[3682947 rows x 145 columns]
