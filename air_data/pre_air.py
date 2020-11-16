@@ -37,12 +37,13 @@ schema_sdf = StructType([
         StructField('SecurityDelay',  DoubleType(), True),
         StructField('LateAircraftDelay',  DoubleType(), True)
     ])
-air = spark.read.options(header='true').schema(schema_sdf).csv("/lqhspark/air8000.csv")
+air = spark.read.options(header='true').schema(schema_sdf).csv("/data/airdelay_small.csv")
 used_var=["Year","Month","DayofMonth","DayOfWeek","DepTime","CRSDepTime","CRSArrTime","UniqueCarrier","ActualElapsedTime","Origin","Dest","ArrDelay","AirTime","Distance"]
-air2_pdf = air.select(used_var).toPandas()
+spark.conf.set("spark.sql.execution.arrow.enabled", "true")#优化toPandas()的性能
+air2_pdf=air[used_var].toPandas()
 myair=air2_pdf.dropna()
 myair.index=range(len(myair))#一定要更新索引！!!否则会出现空值
-print("myair:",myair)
+#print("myair:",myair)
 #选择哑变量
 #! /usr/bin/env python3
 import pandas as pd
@@ -116,7 +117,7 @@ def select_dummy_factors(dummy_dict, keep_top, replace_with):
     
     return dummy_list
 
-#将字符型数字转化为浮点型，因为原数据框的数字都是浮点型，但split之后的数据是字符型！
+#将字符型数字转化为浮点型
 def safe_float(item):
     try:
         n=float(item)
@@ -160,9 +161,8 @@ new_air=pd.concat([myair[other_var],new_air],axis=1)
 
 new_air['ArrDelay']=new_air['ArrDelay']>0
 new_air['ArrDelay']=new_air['ArrDelay'].replace([True,False],[1,0])
+print("myair:",myair)
+print("new_air：",new_air)
 #print("sample_num is",sample_num)
-print("new_air:",new_air)
-print("dummy_count:",dummy_counts)
-print("dummy_list:",dummy_list)
-myair.to_csv("/home/devel/students/2020211019longqianhong/myspark/myair.csv",index=False)
-new_air.to_csv("/home/devel/students/2020211019longqianhong/myspark/new_air.csv",index=False)
+#myair.to_csv("/home/devel/students/2020211019longqianhong/myspark/myair.csv",index=False)
+new_air.to_csv("/home/devel/students/2020211019longqianhong/myspark/all_new_air.csv",index=False)
